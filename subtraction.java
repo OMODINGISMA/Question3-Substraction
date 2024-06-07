@@ -4,27 +4,35 @@ package studentvu.mathematics;
 import java.util.Random;
 import java.util.Scanner;
 public class subtraction {
-     public static void main(String[] args) {
-        Random random = new Random();
-        Scanner scanner = new Scanner(System.in);
+ public static void main(String[] args) {
 
-        int number1 = random.nextInt(10); 
-        int number2 = random.nextInt(10); 
-        if (number1 < number2) {
-            int temp = number1;
-            number1 = number2;
-            number2 = temp;
-        }
-        
-        System.out.print("What is " + number1 + " - " + number2 + "? ");
-        int studentAnswer = scanner.nextInt();
+        int number1, number2, total;
+        Scanner nn= new Scanner(System.in);
+        number1 = (int) (Math.random() * 10);
+        number2 = (int) (Math.random() * 10);
+        System.out.println("number1:"+ number1);
+        System.out.println("number2:"+ number2);
 
-        int correctAnswer = number1 - number2;
-        if (studentAnswer == correctAnswer) {
-            System.out.println("Correct!");
-        } else {
-            System.out.println("Incorrect. The correct answer is " + correctAnswer + ".");
+
+        if(number1<number2){
+
+            System.out.println("Subtract "+ number2 +" -" + number1);
+            System.out.println("Please enter the answer ");
+
+            total=nn.nextInt();
+            if((number2-number1)!=total){
+                System.out.println("the answer entered  "+ total +" is not correct" );
+            } else{
+                System.out.println("the answer entered  "+ total +" is correct" );
+            }
+        } else{
+            System.out.println("Please enter the answer ");
+            total=nn.nextInt();
+            if((number2-number1)!=total){
+                System.out.println("the answer entered  "+ total +" is not correct" );
+            } else{
+                System.out.println("the answer entered  "+ total +" is correct" );
+            }
         }
-        scanner.close();
     }
 }
